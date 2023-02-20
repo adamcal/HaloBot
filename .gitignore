@@ -175,3 +175,5 @@ cython_debug/
 .idea/
 
 /discord_config.py
+/data.db
+
