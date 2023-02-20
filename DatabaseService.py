@@ -21,7 +21,7 @@ async def store_data(db, data):
 async def get_stats(db, user) -> Row:
 
     async with db.cursor() as cursor:
-        await cursor.execute("""SELECT * FROM data WHERE user=?""", (user,))
+        await cursor.execute("""SELECT * FROM data WHERE user=? ORDER BY ROWID DESC LIMIT 1""", (user,))
         row = await cursor.fetchone()
 
     return row
